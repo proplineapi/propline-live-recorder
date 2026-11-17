@@ -52,7 +52,16 @@ Want line movement on the props too? Add `"line_movement"` to `STREAM_EVENTS` (i
 
 ## Sample
 
-A full recorded NBA game is linked from the [recipes page](https://prop-line.com/recipes#live-game).
+[samples/nba-2026-11-16-orl-at-bos.jsonl.gz](samples/nba-2026-11-16-orl-at-bos.jsonl.gz) is a full recorded NBA game: Orlando Magic 115, Boston Celtics 105 (Nov 16, 2026). It holds tip-off to the final buzzer: 1,525 lines, 24 MB unzipped.
+
+- 1 pregame board (every book's odds)
+- 823 plays, 340 stat updates (4,693 player stat changes), 358 game-state updates
+- the final box score and every graded prop
+
+```bash
+gunzip -k samples/nba-2026-11-16-orl-at-bos.jsonl.gz
+python recorder.py replay samples/nba-2026-11-16-orl-at-bos.jsonl
+```
 
 ## Docs
 
