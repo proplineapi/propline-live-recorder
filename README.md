@@ -50,17 +50,19 @@ Q1 10:48  Jayson Tatum points 0.0 -> 3.0  (nba:1628369)
 
 Want line movement on the props too? Add `"line_movement"` to `STREAM_EVENTS` (it is a lot more traffic).
 
-## Sample
+## Samples
 
-[samples/nba-2026-11-16-orl-at-bos.jsonl.gz](samples/nba-2026-11-16-orl-at-bos.jsonl.gz) is a full recorded NBA game: Orlando Magic 115, Boston Celtics 105 (Nov 16, 2026). It holds tip-off to the final buzzer: 1,525 lines, 24 MB unzipped.
+Three full recorded NBA games, tip-off to the final buzzer. Each holds the pregame board (every book's odds), every play, stat update and game-state update, the final box score and every graded prop.
 
-- 1 pregame board (every book's odds)
-- 823 plays, 340 stat updates (4,693 player stat changes), 358 game-state updates
-- the final box score and every graded prop
+| File | Game | Lines | Plays | Stat updates (player stat changes) | Game-state updates |
+|---|---|---|---|---|---|
+| [nba-2026-11-16-orl-at-bos.jsonl.gz](samples/nba-2026-11-16-orl-at-bos.jsonl.gz) | Orlando Magic 115, Boston Celtics 105 (Nov 16, 2026) | 1,525 | 823 | 340 (4,693) | 358 |
+| [nba-2026-11-17-nyk-at-tor.jsonl.gz](samples/nba-2026-11-17-nyk-at-tor.jsonl.gz) | New York Knicks 111, Toronto Raptors 102 (Nov 17, 2026) | 1,623 | 966 | 305 (4,150) | 348 |
+| [nba-2026-11-17-cha-at-lal.jsonl.gz](samples/nba-2026-11-17-cha-at-lal.jsonl.gz) | Los Angeles Lakers 118, Charlotte Hornets 114 (Nov 17, 2026) | 1,720 | 929 | 377 (5,095) | 410 |
 
 ```bash
-gunzip -k samples/nba-2026-11-16-orl-at-bos.jsonl.gz
-python recorder.py replay samples/nba-2026-11-16-orl-at-bos.jsonl
+gunzip -k samples/nba-2026-11-17-cha-at-lal.jsonl.gz
+python recorder.py replay samples/nba-2026-11-17-cha-at-lal.jsonl
 ```
 
 ## Docs
